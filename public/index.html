@@ -7,23 +7,75 @@
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
 
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Source+Sans+Pro:300i,700i&display=swap" rel="stylesheet"> 
+
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
+
+    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+
+    <link rel="stylesheet" href="/styles/new-tweets.css" type="text/css" />
+
+    <link rel="stylesheet" href="/styles/tweet-log.css" type="text/css" />
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
+    <nav class="box">
       <span>tweeter</span>
+      <span class="subtitle"><strong>write</strong> a new tweet</span>
     </nav>
-
+    <!-- header -->
+    <header>
+      <div>
+          <!-- <img src="/images/profile-hex.png">  -->
+          <img src="/images/majin2.jpg"> 
+      </div>
+      <br>
+      <div>
+          <h2>Majin Buu</h2>
+      </div>
+  </header>
+  
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="/tweets" method="POST">
+          <textarea name="text" placeholder="What are you humming about?"></textarea>
+          <input type="submit" value="Tweet">
+          <span class="counter">140</span>
+        </form>
+      </section>
+      <section id="container">
+        <article class="tweet">
+          <header>
+            <img src="http://placehold.it/100x100">
+            <span class="name">Majin Buu</span>
+            <span class="handle">@mjbuu</span>
+          </header>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+            <footer>
+              <span class="time">Moments ago</span>
+              <div class="icon">
+                <img src="http://placehold.it/40x40">
+                <img src="http://placehold.it/40x40">
+                <img src="http://placehold.it/40x40">
+              </div>
+
+            </footer>
+          
+        </article>
+      </section>
+    </main>
   </body>
 </html>

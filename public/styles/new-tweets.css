@@ -1,0 +1,43 @@
+.new-tweet textarea {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  border-bottom: 3px solid black;
+  resize: none;
+  margin-bottom: 10 px;
+  font-family: sans-serif;
+  font-weight: 700;
+  height: 1.5em
+}
+
+.counter {
+  float: right;
+}
+
+.counter.over-limit {
+  color: red;
+}
+
+input {
+  padding: 5px 10px; 
+  margin-bottom: 2em;
+  background-color: #4056A1;
+  color: whitesmoke;
+  font-family: "Bungee";
+}
+
+input:hover {
+  background-color: #a10000;
+  color: black;
+  cursor: pointer;
+}
+
+main h2 {
+  font-family: sans-serif;
+  font-weight: 100;
+}
+
+.counter {
+  font-family: "Bungee";
+}
+

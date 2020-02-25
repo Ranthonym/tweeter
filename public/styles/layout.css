@@ -18,6 +18,15 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: "Source Sans Pro, Sans Serif";
+}
+
+main {
+  width: 90%;
+  margin: 0 auto;
+  color: inherit;
+  background-color: inherit;
+
 }
 
 /*

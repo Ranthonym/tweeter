@@ -1,0 +1,21 @@
+
+
+.box {
+  background-color: #4056A1;
+  color: #FFFFFF;
+  height: 120px;
+  position: sticky;
+  width: 100%;
+  z-index: 400;
+  padding: 1.5em;
+}
+
+nav span{
+  font-family: "Bungee";
+}
+
+.subtitle {
+  float: right;
+  font-family: fantasy;
+}
+
