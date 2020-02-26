@@ -51,6 +51,13 @@ const timeConvert = function(time) {
     }
 };
 
+// helper function that escapes input string
+const escape = (string) => {
+  let div = document.createElement('div');
+  div.appendChild(document.createTextNode(string));
+  return div.innerHTML;
+}
+
 //function to send new tweet form data to server
 const sendFormDataToServer = () => {
   $(".new-tweet form").on('submit', function(event) {
@@ -69,7 +76,7 @@ const sendFormDataToServer = () => {
         type: 'POST',
         data : form_data
       }).then(response => {
-        console.log(form_data);
+        loadTweets();
       });
   });
 };
@@ -85,7 +92,7 @@ const createTweetElement = function(tweet) {
           <span class="name">${tweet.user.name}</span>
           <span class="handle">${tweet.user.handle}</span>
         </header>
-       <p>${tweet.content.text} </p>
+       <p>${escape(tweet.content.text)} </p>
           <footer>
             <span class="time">${timeConvert(elapsedTime)}</span>
             <div class="icon">
