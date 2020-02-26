@@ -1,6 +1,6 @@
 body > header {
   background-color: transparent;
-  background-color: #a10000; */
+  background-color:rgb(70, 23, 70);
   background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
   color: #FFFFFF;
   height: 400px;
@@ -20,4 +20,5 @@ body > header img{
 
 body > header h2{
   text-align: center;
+  font-family: 'Source Sans Pro' ;
 }
