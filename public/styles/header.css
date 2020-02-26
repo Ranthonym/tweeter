@@ -1,7 +1,8 @@
 body > header {
   background-color: transparent;
-  background-color:rgb(70, 23, 70);
-  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+  background-color: #f00800;
+  background-image: url("https://www.transparenttextures.com/patterns/food.png");
+  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   color: #FFFFFF;
   height: 400px;
   width: 100%;

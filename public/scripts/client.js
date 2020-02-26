@@ -3,8 +3,27 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
+//function to send new tweet form data to server
+const sendFormDataToServer = () => {
+  $(".new-tweet form").on('submit', function(event) {
+    event.preventDefault(); //prevent default action 
+    const form_data = $(this).serialize(); //Encode form elements for submission
+
+    $.ajax({
+      url : '/tweets',
+      type: 'POST',
+      data : form_data
+    }).then(response => {
+      console.log(form_data)
+    });
+  });
+};
+
 $(document).ready(function() {
   console.log("DOM ready");
+  sendFormDataToServer();
+
 
 const createTweetElement = function(tweet) {
   let elapsedTime = Date.now() - tweet.created_at;
@@ -37,12 +56,13 @@ const renderTweets = function(tweetArray) {
 
 // helper function that converts elapsed milliseconds to readable format
 const timeConvert = function(time) {
-  let days, hours, minutes, seconds, total_hours, total_minutes, total_seconds;
+  let years, months, days, hours, minutes, seconds, total_hours, total_minutes, total_seconds;
   
   total_seconds = parseInt(Math.floor(time / 1000));
   total_minutes = parseInt(Math.floor(total_seconds / 60));
   total_hours = parseInt(Math.floor(total_minutes / 60));
   days = parseInt(Math.floor(total_hours / 24));
+  months = parseInt(Math.floor(days / 30));
   years = parseInt(Math.floor(days / 365));
 
   seconds = parseInt(total_seconds % 60);
@@ -55,6 +75,12 @@ const timeConvert = function(time) {
       return (`1 year ago`);
     }
 
+  if (months > 2) {
+    return (`${months} months ago`);
+  } else if (months > 1 && months < 2) {
+      return (`1 month ago`);
+    }
+    
   if (days > 2) {
     return (`${days} days ago`);
   } else if (days > 1 && days < 2) {
