@@ -10,8 +10,10 @@ $(document).ready(function() {
     counter.text(remChar);
     if (remChar < 0) {
       counter.addClass("over-limit");
+      $(".error-msg").text("Character limit exceeded");
     } else {
       counter.removeClass("over-limit");
+      $(".error-msg").text("");
     }
   })
 

@@ -1,60 +1,5 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
 
-//function to send new tweet form data to server
-const sendFormDataToServer = () => {
-  $(".new-tweet form").on('submit', function(event) {
-    event.preventDefault(); //prevent default action 
-    const form_data = $(this).serialize(); //Encode form elements for submission
-
-    $.ajax({
-      url : '/tweets',
-      type: 'POST',
-      data : form_data
-    }).then(response => {
-      console.log(form_data)
-    });
-  });
-};
-
-$(document).ready(function() {
-  console.log("DOM ready");
-  sendFormDataToServer();
-
-
-const createTweetElement = function(tweet) {
-  let elapsedTime = Date.now() - tweet.created_at;
-
- let markup = `<article class="tweet">
-        <header>
-         <img src=${tweet.user.avatars}>
-          <span class="name">${tweet.user.name}</span>
-          <span class="handle">${tweet.user.handle}</span>
-        </header>
-       <p>${tweet.content.text} </p>
-          <footer>
-            <span class="time">${timeConvert(elapsedTime)}</span>
-            <div class="icon">
-            <i class="fas fa-flag"></i>
-            <i class="fas fa-retweet"></i>
-            <i class="fas fa-heart"></i>
-            </div>
-          </footer> 
-        </article>`
-    return markup;
-
-};
-
-
-const renderTweets = function(tweetArray) {
-  tweetArray.forEach(tweet => $('#tweets-container').append(createTweetElement(tweet))); 
-};
-
-
-// helper function that converts elapsed milliseconds to readable format
+ // helper function that converts elapsed milliseconds to readable format
 const timeConvert = function(time) {
   let years, months, days, hours, minutes, seconds, total_hours, total_minutes, total_seconds;
   
@@ -106,36 +51,81 @@ const timeConvert = function(time) {
     }
 };
 
-
-// Fake data taken from initial-tweets.json
-const data = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088
-  }
-]
-
-renderTweets(data);
+//function to send new tweet form data to server
+const sendFormDataToServer = () => {
+  $(".new-tweet form").on('submit', function(event) {
+    event.preventDefault(); //prevent default action 
+    const form_data = $(this).serialize(); //Encode form elements for submission
+    const textLength = $('.new-tweet textarea').val().length;
+    if (!textLength) {
+      $(".error-msg").text("No text present");
+      return;
+    } else if (textLength > 140) {
+      $(".error-msg").text("Character limit exceeded");
+      return;
+    } 
+     $.ajax({
+        url : '/tweets',
+        type: 'POST',
+        data : form_data
+      }).then(response => {
+        console.log(form_data);
+      });
+  });
+};
 
 
+// creates new tweet content in html structure
+const createTweetElement = function(tweet) {
+  let elapsedTime = Date.now() - tweet.created_at;
+
+ let markup = `<article class="tweet">
+        <header>
+         <img src=${tweet.user.avatars}>
+          <span class="name">${tweet.user.name}</span>
+          <span class="handle">${tweet.user.handle}</span>
+        </header>
+       <p>${tweet.content.text} </p>
+          <footer>
+            <span class="time">${timeConvert(elapsedTime)}</span>
+            <div class="icon">
+            <i class="fas fa-flag"></i>
+            <i class="fas fa-retweet"></i>
+            <i class="fas fa-heart"></i>
+            </div>
+          </footer> 
+        </article>`
+    return markup;
+
+};
+
+// function that loops over tweet posts and renders them
+const renderTweets = function(tweetArray) {
+  tweetArray.forEach(tweet => $('#tweets-container').prepend(createTweetElement(tweet))); 
+};
+
+// reads new tweet post
+const loadTweets = () => {
+  $.ajax({
+    url: `/tweets`,
+    type: "GET",
+    dataType: "JSON"
+  })
+    .then(response => {
+      renderTweets(response);
+      console.log("success");
+    })
+    .catch(() => {
+      console.log("error triggered");
+    });
+};
+
+
+// loading DOM
+$(document).ready(function() {
+  console.log("DOM ready");
+  sendFormDataToServer();
+  loadTweets();
 });
 
 

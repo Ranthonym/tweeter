@@ -41,3 +41,9 @@ main h2 {
   font-family: "Bungee";
 }
 
+.error-msg {
+  font-family: 'Bungee';
+  color: red;
+  font-weight: 300;
+}
+
