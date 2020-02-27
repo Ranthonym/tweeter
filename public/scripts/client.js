@@ -34,20 +34,20 @@ const timeConvert = function(time) {
 
   if (hours > 2) {
     return (`${hours} hours ago`);
-  } else if (days > 1 && days < 2) {
+  } else if (hours > 1 && hours < 2) {
       return (`1 hour ago`)
     }
 
   if ( minutes > 2) {
     return (`${minutes} minutes ago`);
-  } else if (days > 1 && days < 2) {
+  } else if (minutes > 1 && minutes < 2) {
       return (`1 minute ago`)
     }
 
   if (seconds > 2) {
     return (`${seconds} seconds ago`);
-  } else if (days > 1 && days < 2) {
-      return (`1 moment ago`)
+  } else if (seconds <= 2) {
+      return (`A moment ago`)
     }
 };
 
@@ -65,10 +65,10 @@ const sendFormDataToServer = () => {
     const form_data = $(this).serialize(); //Encode form elements for submission
     const textLength = $('.new-tweet textarea').val().length;
     if (!textLength) {
-      $(".error-msg").text("No text present").fadeIn(200);
+      $(".error-msg").text("No text present");
       return;
     } else if (textLength > 140) {
-      $(".error-msg").text("Character limit exceeded").fadeIn(200);
+      $(".error-msg").text("Character limit exceeded");
       return;
     } 
      $.ajax({
@@ -92,7 +92,7 @@ const createTweetElement = function(tweet) {
           <span class="name">${tweet.user.name}</span>
           <span class="handle">${tweet.user.handle}</span>
         </header>
-       <p>${escape(tweet.content.text)} </p>
+       <p class="tweet-content">${escape(tweet.content.text)} </p>
           <footer>
             <span class="time">${timeConvert(elapsedTime)}</span>
             <div class="icon">
@@ -103,11 +103,11 @@ const createTweetElement = function(tweet) {
           </footer> 
         </article>`
     return markup;
-
 };
 
 // function that loops over tweet posts and renders them
 const renderTweets = function(tweetArray) {
+  $('#tweets-container').empty(); // empties the existing tweet container before loading updated version
   tweetArray.forEach(tweet => $('#tweets-container').prepend(createTweetElement(tweet))); 
 };
 
@@ -149,17 +149,14 @@ $(document).ready(function() {
     } else {
         $('#scroll-top').fadeOut(200);
     }
+  });
 
-});
-
-// Animate the scroll to top
-$('#scroll-top').click(function(event) {
+  // Animate the scroll to top
+  $('#scroll-top').click(function(event) {
     event.preventDefault();
     $('.new-tweet').slideToggle('fast');
     $('html, body').animate({scrollTop: 0}, 600);
-  
-})
-
+  })
 });
 
 

@@ -46,4 +46,6 @@ article {
   flex-basis: 5%
 }
 
-
+.tweet-content {
+  word-wrap: break-word;
+}
