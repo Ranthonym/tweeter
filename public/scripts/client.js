@@ -128,11 +128,35 @@ const loadTweets = () => {
 };
 
 
+
 // loading DOM
 $(document).ready(function() {
   console.log("DOM ready");
   sendFormDataToServer();
   loadTweets();
+
+  // bouncing arror idle animation
+  $( ".new-tweet-btn" ).click(function() {
+    $( ".new-tweet" ).slideToggle( "fast")
+  });
+
+  // scroll top detection function
+  $(window).scroll(function() {
+    console.log('scrolling...')
+    console.log($(this).scrollTop());
+    if ($(this).scrollTop() > 400) {
+        $('#scroll-top').fadeIn(200);
+    } else {
+        $('#scroll-top').fadeOut(200);
+    }
+});
+
+// Animate the scroll to top
+$('#scroll-top').click(function(event) {
+    event.preventDefault();
+    $('html, body').animate({scrollTop: 0}, 600);
+})
+
 });
 
 

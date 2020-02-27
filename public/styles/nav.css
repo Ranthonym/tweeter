@@ -8,14 +8,49 @@
   width: 100%;
   z-index: 400;
   padding: 1.5em;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 nav span{
   font-family: "Bungee";
 }
 
+#logo {
+  font-size: xx-large;
+}
+
 .subtitle {
   float: right;
   font-family: fantasy;
+}
+
+.new-tweet-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.new-tweet-btn:hover {
+  color: orangered;
+  cursor: pointer;
+}
+
+#chevron {
+  color: orangered;
+  margin-top: 0.2em;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-name: bounce-2;
+  animation-timing-function: ease;
+}
+
+@keyframes bounce-2 {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(15px); }
+  100% { transform: translateY(0); }
 }
 

@@ -33,9 +33,17 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
+    <div>
+      <button id='scroll-top' style='display: none;' ><i class="fas fa-angle-double-up"></i></button>
+    </div>
     <nav class="box">
-      <span>tweeter</span>
-      <span class="subtitle"><strong>write</strong> a new tweet</span>
+      <span id='logo'>tweeter</span>
+
+      <div class="new-tweet-btn">
+        <span class="subtitle"><strong>write</strong> a new tweet </span>
+         <i id="chevron" class="fas fa-angle-double-down"></i>
+      </div>
+
     </nav>
     <!-- header -->
     <header>
@@ -51,7 +59,7 @@
   
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <section class="new-tweet">
+      <section class="new-tweet" style="display: none;">
         <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST">
           <textarea id="textbox" name="text" placeholder="What are you humming about?"></textarea>
@@ -75,7 +83,6 @@
                 <i class="fas fa-retweet"></i>
                 <i class="fas fa-heart"></i>
               </div>
-
             </footer>
           
         </article>

@@ -21,5 +21,6 @@ body > header img{
 
 body > header h2{
   text-align: center;
-  font-family: 'Source Sans Pro' ;
+  font-family: 'Sans Serif';
+  font-style: normal;
 }
