@@ -133,6 +133,7 @@ $(document).ready(function() {
   sendFormDataToServer();
   loadTweets();
 
+
   // bouncing arror idle animation
   $( ".new-tweet-btn" ).click(function() {
     $( ".new-tweet" ).slideToggle( "fast")
@@ -142,19 +143,22 @@ $(document).ready(function() {
 
   // scroll top detection function
   $(window).scroll(function() {
-    console.log('scrolling...')
     console.log($(this).scrollTop());
     if ($(this).scrollTop() > 400) {
+      $('.box').css('background-color', 'rgb(49, 92, 173)')
         $('#scroll-top').fadeIn(200);
     } else {
         $('#scroll-top').fadeOut(200);
+        if ($(window).width() < 1024) {
+          $('.box').css('background-color', 'transparent')
+        }
     }
   });
 
   // Animate the scroll to top
   $('#scroll-top').click(function(event) {
     event.preventDefault();
-    $('.new-tweet').slideToggle('fast');
+    $('.new-tweet').slideDown('fast');
     $('html, body').animate({scrollTop: 0}, 600);
   })
 });

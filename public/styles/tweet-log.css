@@ -43,7 +43,7 @@ article {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-basis: 5%
+  flex-basis: 10%
 }
 
 .tweet-content {

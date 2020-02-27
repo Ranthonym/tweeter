@@ -1,25 +1,27 @@
-body > header {
+.header {
   background-color: transparent;
   background-color: #e06126;
   background-image: url("https://www.transparenttextures.com/patterns/food.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   color: #FFFFFF;
-  height: 400px;
+  height: 520px;
   width: 100%;
   padding: 1.5em;
+  padding-top: 130px;
 }
 
-body > header img{
+.header .img {
   display: block;
   margin: 0 auto;
   border-radius: 80%;
   height: 256px;
   width: 256px;
   background-size: cover;
+  padding: 20px;
 
 }
 
-body > header h2{
+.header h2{
   text-align: center;
   font-family: 'Sans Serif';
   font-style: normal;

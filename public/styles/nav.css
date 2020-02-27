@@ -1,10 +1,10 @@
 
 
 .box {
-  background-color: #4056A1;
+  background-color: transparent;
   color: #FFFFFF;
   height: 120px;
-  position: sticky;
+  position: fixed;
   width: 100%;
   z-index: 400;
   padding: 1.5em;
