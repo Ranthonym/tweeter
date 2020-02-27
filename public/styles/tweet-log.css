@@ -16,6 +16,10 @@ article {
 
  }
 
+ .icon {
+   opacity: 0;
+ }
+
  article.tweet footer {
   display: flex;
   align-items: center;
@@ -44,6 +48,10 @@ article {
   align-items: center;
   justify-content: space-between;
   flex-basis: 10%
+}
+
+.tweet:hover .icon {
+  opacity: 1;
 }
 
 .tweet-content {

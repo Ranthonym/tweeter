@@ -7,9 +7,12 @@
   margin-bottom: 10 px;
   font-family: sans-serif;
   font-weight: 700;
-  height: 1.5em
+  height: 1.5em;
 }
 
+.new-tweet {
+  padding-top: 5% ;
+}
 .counter {
   float: right;
 }

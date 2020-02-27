@@ -139,19 +139,15 @@ $(document).ready(function() {
     $( ".new-tweet" ).slideToggle( "fast")
     $("#textbox").val("");
     $('.counter').text(140);
+    $('#textbox').focus();
   });
 
   // scroll top detection function
   $(window).scroll(function() {
-    console.log($(this).scrollTop());
     if ($(this).scrollTop() > 400) {
-      $('.box').css('background-color', 'rgb(49, 92, 173)')
         $('#scroll-top').fadeIn(200);
     } else {
         $('#scroll-top').fadeOut(200);
-        if ($(window).width() < 1024) {
-          $('.box').css('background-color', 'transparent')
-        }
     }
   });
 
