@@ -65,10 +65,10 @@ const sendFormDataToServer = () => {
     const form_data = $(this).serialize(); //Encode form elements for submission
     const textLength = $('.new-tweet textarea').val().length;
     if (!textLength) {
-      $(".error-msg").text("No text present");
+      $(".error-msg").text("No text present").fadeIn(200);
       return;
     } else if (textLength > 140) {
-      $(".error-msg").text("Character limit exceeded");
+      $(".error-msg").text("Character limit exceeded").fadeIn(200);
       return;
     } 
      $.ajax({
@@ -127,8 +127,6 @@ const loadTweets = () => {
     });
 };
 
-
-
 // loading DOM
 $(document).ready(function() {
   console.log("DOM ready");
@@ -138,6 +136,8 @@ $(document).ready(function() {
   // bouncing arror idle animation
   $( ".new-tweet-btn" ).click(function() {
     $( ".new-tweet" ).slideToggle( "fast")
+    $("#textbox").val("");
+    $('.counter').text(140);
   });
 
   // scroll top detection function
@@ -149,12 +149,15 @@ $(document).ready(function() {
     } else {
         $('#scroll-top').fadeOut(200);
     }
+
 });
 
 // Animate the scroll to top
 $('#scroll-top').click(function(event) {
     event.preventDefault();
+    $('.new-tweet').slideToggle('fast');
     $('html, body').animate({scrollTop: 0}, 600);
+  
 })
 
 });

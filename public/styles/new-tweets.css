@@ -21,6 +21,7 @@
 input {
   padding: 5px 10px; 
   margin-bottom: 2em;
+  margin-top: 0.5em;
   background-color: #4056A1;
   color: whitesmoke;
   font-family: "Bungee";
@@ -39,6 +40,7 @@ main h2 {
 
 .counter {
   font-family: "Bungee";
+  margin-top: 0.5em;
 }
 
 .error-msg {
