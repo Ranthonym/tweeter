@@ -3,9 +3,8 @@
 $(document).ready(function() {
   console.log("DOM ready");
   $(".new-tweet textarea").on('input', function() {
-    let textLength = $(this).val().length;
+    let textLength = $(this).val().trim().length;
     let counter = $(this).siblings(".counter");
-    console.log(textLength);
     let remChar = 140 - textLength;
     counter.text(remChar);
     if (remChar < 0) {

@@ -6,10 +6,10 @@ This project implements a stretch goal of adding a scroll to top button that dyn
 
 ## Screenshots
 
-!["Screenshot of desktop layout with compose new tweet feature"]()
-!["Screenshot of desktop layout with tweet lofg scroll top button"]()
-!["Screenshot of mobile layout with no text error message"]()
-!["Screenshot of mobile layout with character over limit error message"]()
+!["Screenshot of desktop layout with compose new tweet feature"](https://raw.githubusercontent.com/Ranthonym/tweeter/master/public/images/Desktop%20layout.png)
+!["Screenshot of desktop layout with tweet log scroll top button"](https://raw.githubusercontent.com/Ranthonym/tweeter/master/public/images/Desktop%20Layout%20with%20scroll%20top%20button.png)
+!["Screenshot of mobile layout with no text error message"](https://raw.githubusercontent.com/Ranthonym/tweeter/master/public/images/Mobile%20layout%20with%20empty%20text%20error%20msg.png)
+!["Screenshot of mobile layout with character over limit error message"](https://raw.githubusercontent.com/Ranthonym/tweeter/master/public/images/Mobile%20layout%20with%20over%20limit%20error%20msg.png)
 
 ## Getting Started
 

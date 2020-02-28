@@ -1,9 +1,9 @@
 
 // helper function that converts elapsed milliseconds to readable format
-const timeConvert = function(time) {
+const timeConvert = function(milliseconds) {
   let years, months, days, hours, minutes, seconds, totalHours, totalMinutes, totalSeconds;
   
-  totalSeconds = parseInt(Math.floor(time / 1000));
+  totalSeconds = parseInt(Math.floor(milliseconds / 1000));
   totalMinutes = parseInt(Math.floor(totalSeconds / 60));
   totalHours = parseInt(Math.floor(totalMinutes / 60));
   days = parseInt(Math.floor(totalHours / 24));
@@ -86,7 +86,6 @@ const sendFormDataToServer = () => {
 // creates new tweet content in html structure
 const createTweetElement = function(tweet) {
   let elapsedTime = Date.now() - tweet.created_at;
-
   let markup = `<article class="tweet">
         <header>
          <img src=${tweet.user.avatars}>
