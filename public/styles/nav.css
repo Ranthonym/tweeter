@@ -1,4 +1,4 @@
-
+/* // CSS styling for nav bar */
 
 .box {
   background-color: #e06126;
@@ -39,6 +39,7 @@ nav span{
   cursor: pointer;
 }
 
+/* // CSS styling for bouncing chevron animation */
 #chevron {
   color: orangered;
   margin-top: 0.2em;

@@ -28,6 +28,7 @@ main {
   background-color: inherit;
 
 }
+/* // CSS styling for scroll to top button */
 
 #scroll-top{
   position:fixed;
@@ -53,8 +54,8 @@ main {
   .page {
     display: flex;
     padding-top: 15%;
-    justify-content: space-between;
-    width: 100%;
+    /* justify-content: space-between; */
+    /* width: 100%; */
 
   }
 
@@ -68,6 +69,7 @@ main {
   }
 
   .header {
+    width: 40%;
     margin: 0 5% 0 3%;
   }
 

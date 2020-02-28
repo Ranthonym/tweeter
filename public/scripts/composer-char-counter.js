@@ -1,7 +1,7 @@
+//handles new tweet submission and displays appropriate error messages
+
 $(document).ready(function() {
   console.log("DOM ready");
-
-  
   $(".new-tweet textarea").on('input', function() {
     let textLength = $(this).val().length;
     let counter = $(this).siblings(".counter");
@@ -15,12 +15,10 @@ $(document).ready(function() {
       counter.removeClass("over-limit");
       $(".error-msg").text("");
     }
-  })
+  });
 
-  $(".new-tweet textarea").blur(function(){
-  })
-  
-  
+  $(".new-tweet textarea").blur(function() {
+  });
 });
 
 

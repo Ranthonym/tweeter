@@ -1,8 +1,15 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, single-page Twitter clone built using HTML, CSS, JS, jQuery and AJAX on the front-end, and Node, Express and MongoDB on back-end.
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+This project implements a stretch goal of adding a scroll to top button that dynamically becomes visible on the bottom right area of the page when the user scrolls down a certain distance. Upon clicking the button, the page will automatically scroll to the top of the page and show the "Compose new Tweet" box.
+
+## Screenshots
+
+!["Screenshot of desktop layout with compose new tweet feature"]()
+!["Screenshot of desktop layout with tweet lofg scroll top button"]()
+!["Screenshot of mobile layout with no text error message"]()
+!["Screenshot of mobile layout with character over limit error message"]()
 
 ## Getting Started
 
@@ -14,4 +21,7 @@ This repository is the starter code for the project: Students will fork and clon
 ## Dependencies
 
 - Express
+- Body Parser
+- Chance
+- md5
 - Node 5.10.x or above

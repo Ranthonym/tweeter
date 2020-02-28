@@ -1,3 +1,5 @@
+/* // CSS styling for tweet log container */
+
 article {
   border: 5px solid black;
   padding: 1.53em;
@@ -14,10 +16,6 @@ article {
  .handle  {
    opacity: 0;
 
- }
-
- .icon {
-   opacity: 0;
  }
 
  article.tweet footer {
@@ -39,6 +37,7 @@ article {
   box-shadow: 5px 10px 20px cornflowerblue;
 }
 
+
 .tweet:hover .handle {
   opacity: 1;
 }
@@ -47,7 +46,8 @@ article {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-basis: 10%
+  flex-basis: 10%;
+  opacity: 0;
 }
 
 .tweet:hover .icon {
